@@ -64,8 +64,8 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(26,26,39,0.6) 55%,
-    var(--bg2) 100%
+    rgba(0,0,0,0.6) 55%,
+    #0a0a0a 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -250,7 +250,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--bg2));
+  background: linear-gradient(to bottom, transparent, #0a0a0a);
   pointer-events: none;
   z-index: 0;
 }
@@ -258,7 +258,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 120px;
-  background: linear-gradient(to top, transparent, var(--bg2));
+  background: linear-gradient(to top, transparent, #0a0a0a);
   pointer-events: none;
   z-index: 0;
 }
@@ -342,14 +342,14 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 160px;
-  background: linear-gradient(to bottom, var(--bg2), transparent);
+  background: linear-gradient(to bottom, #0a0a0a, transparent);
   pointer-events: none;
 }
 .lp-cta-fade-bottom {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 160px;
-  background: linear-gradient(to top, var(--bg2), transparent);
+  background: linear-gradient(to top, #0a0a0a, transparent);
   pointer-events: none;
 }
 .lp-cta-inner {
