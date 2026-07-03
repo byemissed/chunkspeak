@@ -11,7 +11,7 @@
 <body class="landing-body">
 
 <!-- FULLPAGE VIDEO BACKGROUND -->
-<video class="site-bg-video" autoplay muted loop playsinline disablePictureInPicture>
+<video class="site-bg-video" id="bgVideo" muted loop playsinline disablePictureInPicture>
   <source src="videos/hero.mp4" type="video/mp4">
 </video>
 
@@ -259,6 +259,16 @@ const nb = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   nb.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
+
+/* ── Video autoplay fix ── */
+const bgVideo = document.getElementById('bgVideo');
+if (bgVideo) {
+  bgVideo.play().catch(() => {
+    // autoplay engellendiyse kullanıcı etkileşiminde başlat
+    document.addEventListener('click', () => bgVideo.play(), { once: true });
+    document.addEventListener('touchstart', () => bgVideo.play(), { once: true });
+  });
+}
 
 /* ── Smooth scroll — anchor linkler ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
