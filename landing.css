@@ -1,17 +1,18 @@
 /* ===== LANDING PAGE ===== */
-.landing-body { }
+.landing-body { overflow-x: hidden; }
 
 /* ── Full-page video background ── */
-.site-bg-wrap {
-  position: absolute;
+.site-bg-video {
+  position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   object-position: center center;
-  z-index: 0;
-  opacity: 0.55;
+  z-index: -1;
+  opacity: 0.45;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* transparent nav on landing, darkens on scroll */
@@ -29,7 +30,6 @@
 /* ── Petal zone ── */
 .petal-zone {
   position: relative;
-  overflow: hidden;
 }
 #petalCanvas {
   position: absolute;
@@ -82,7 +82,7 @@
   align-items: flex-start;
   gap: 24px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* badge */

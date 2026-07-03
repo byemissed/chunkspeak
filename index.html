@@ -11,11 +11,9 @@
 <body class="landing-body">
 
 <!-- FULLPAGE VIDEO BACKGROUND -->
-<div class="site-bg-wrap">
-  <video id="bgVideo" muted loop playsinline autoplay>
-    <source src="videos/hero.mp4" type="video/mp4">
-  </video>
-</div>
+<video class="site-bg-video" autoplay muted loop playsinline>
+  <source src="videos/hero.mp4" type="video/mp4">
+</video>
 
 <!-- LOGIN/REGISTER MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -94,9 +92,6 @@
 
 <!-- HERO -->
 <section class="lp-hero lp-hero-video">
-  <video id="bgVideo" class="site-bg-wrap" muted loop playsinline autoplay>
-    <source src="videos/hero.mp4" type="video/mp4">
-  </video>
   <div class="lp-hero-inner">
     <div class="lp-badge">
       <span class="lp-badge-dot"></span>
@@ -264,16 +259,6 @@ const nb = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   nb.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
-
-/* ── Video autoplay fix ── */
-const bgVideo = document.getElementById('bgVideo');
-if (bgVideo) {
-  const tryPlay = () => bgVideo.play().catch(() => {});
-  tryPlay();
-  document.addEventListener('click', tryPlay, { once: true });
-  document.addEventListener('touchstart', tryPlay, { once: true });
-  document.addEventListener('scroll', tryPlay, { once: true });
-}
 
 /* ── Smooth scroll — anchor linkler ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
