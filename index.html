@@ -265,11 +265,11 @@ window.addEventListener('scroll', () => {
 /* ── Video autoplay fix ── */
 const bgVideo = document.getElementById('bgVideo');
 if (bgVideo) {
-  bgVideo.play().catch(() => {
-    // autoplay engellendiyse kullanıcı etkileşiminde başlat
-    document.addEventListener('click', () => bgVideo.play(), { once: true });
-    document.addEventListener('touchstart', () => bgVideo.play(), { once: true });
-  });
+  const tryPlay = () => bgVideo.play().catch(() => {});
+  tryPlay();
+  document.addEventListener('click', tryPlay, { once: true });
+  document.addEventListener('touchstart', tryPlay, { once: true });
+  document.addEventListener('scroll', tryPlay, { once: true });
 }
 
 /* ── Smooth scroll — anchor linkler ── */
