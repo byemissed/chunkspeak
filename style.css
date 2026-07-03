@@ -147,7 +147,7 @@ code {
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  max-width: 100%; margin: 0; padding: 0 32px;
   height: 58px; display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
