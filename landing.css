@@ -1,12 +1,12 @@
 /* ===== LANDING PAGE ===== */
-.landing-body { overflow-x: hidden; }
+.landing-body { }
 
 /* ── Full-page video background ── */
 .site-bg-wrap {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0; bottom: 0;
+  width: 100%; height: 100%;
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
@@ -14,8 +14,9 @@
 .site-bg-wrap video {
   position: absolute;
   top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
   opacity: 0.45;
