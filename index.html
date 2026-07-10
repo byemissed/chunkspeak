@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0" />
   <title>EssentialMC — Play Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="landing.css" />
   <link rel="stylesheet" href="chest.css" />
@@ -117,6 +120,14 @@
     </div>
   </div>
 
+  <!-- Hero Art: Bee Image -->
+  <div class="lp-hero-art">
+    <div class="lp-star-scene">
+      <div class="lp-bee-scene" id="lpBeeScene">
+        <img src="images/bee.png" alt="Minecraft Bee" class="bee-img-art" id="beeImgArt" />
+      </div>
+    </div>
+  </div>
 
 </section>
 
@@ -323,21 +334,20 @@ const statsObs = new IntersectionObserver(entries => {
   }
 }, { threshold: 0.5 });
 statsObs.observe(statsEl);
-
-/* ── Nether Star mouse interaction ── */
-const starWrap = document.getElementById('lpStar');
-if (starWrap) {
-  const scene = starWrap.closest('.lp-star-scene');
+/* ── Bee Image mouse interaction ── */
+const beeImg = document.getElementById('beeImgArt');
+if (beeImg) {
+  const scene = beeImg.closest('.lp-star-scene');
   scene.addEventListener('mousemove', e => {
     const r = scene.getBoundingClientRect();
-    const dx = ((e.clientX - r.left) / r.width  - 0.5) * 24;
-    const dy = ((e.clientY - r.top)  / r.height - 0.5) * 18;
-    starWrap.style.transform = `rotateX(${-dy}deg) rotateY(${dx}deg)`;
-    starWrap.style.animationPlayState = 'paused';
+    const dx = ((e.clientX - r.left) / r.width  - 0.5) * 30;
+    const dy = ((e.clientY - r.top)  / r.height - 0.5) * 20;
+    beeImg.style.transform = `perspective(1000px) rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.05)`;
+    beeImg.style.animationPlayState = 'paused';
   });
   scene.addEventListener('mouseleave', () => {
-    starWrap.style.transform = '';
-    starWrap.style.animationPlayState = 'running';
+    beeImg.style.transform = '';
+    beeImg.style.animationPlayState = 'running';
   });
 }
 </script>

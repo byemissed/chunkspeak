@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0" />
   <title>EssentialMC — Mod</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
     /* -- Kazma ikonu � sadece parlama sweep -- */
@@ -104,7 +107,7 @@
     /* Navbar scroll blur */
     .navbar { transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s; }
     .navbar.scrolled {
-      background: rgba(26,26,39,0.85) !important;
+      background: #000000 !important;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom-color: var(--border) !important;
@@ -194,7 +197,15 @@
 <!-- MOD HEADER -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="mod-icon" id="modIcon">?</div>
+    <div class="mod-icon" id="modIcon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1bd96a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.5 2.5c0 1.5-1.5 3-1.5 3H9c0 0-1.5-1.5-1.5-3S8.5 0 10.5 0s4 1 4 2.5z"/>
+        <rect x="7" y="5" width="10" height="14" rx="1"/>
+        <line x1="10" y1="9" x2="14" y2="9"/>
+        <line x1="10" y1="12" x2="14" y2="12"/>
+        <line x1="10" y1="15" x2="12" y2="15"/>
+      </svg>
+    </div>
     <div class="mod-info">
       <h1>EssentialMC</h1>
       <p class="desc" data-i18n="mod.desc">A lightweight Fabric mod for playing together � teleportation, party system, in-game voice chat, and a custom avatar identity system. Works on any server, no config required.</p>
@@ -256,7 +267,9 @@
       <div class="desc-panel">
 
         <div class="desc-feat-flat">
-          <div class="desc-feat-icon">??</div>
+          <div class="desc-feat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1bd96a" stroke-width="1.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
           <div class="desc-feat-body">
             <h3 data-i18n="mod.feat.play.title">Play Together</h3>
             <div class="desc-cmd-list">
@@ -272,7 +285,9 @@
         </div>
 
         <div class="desc-feat-flat">
-          <div class="desc-feat-icon">???</div>
+          <div class="desc-feat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1bd96a" stroke-width="1.5" stroke-linecap="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
           <div class="desc-feat-body">
             <h3 data-i18n="mod.feat.voice.title">In-Game Voice Chat</h3>
             <div class="desc-cmd-list">
@@ -286,7 +301,9 @@
         </div>
 
         <div class="desc-feat-flat">
-          <div class="desc-feat-icon">??</div>
+          <div class="desc-feat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1bd96a" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/><path d="M12 12v9"/><path d="M9 18l3 3 3-3"/></svg>
+          </div>
           <div class="desc-feat-body">
             <h3 data-i18n="mod.feat.avatar.title">Custom Avatar System</h3>
             <div class="desc-cmd-list">
