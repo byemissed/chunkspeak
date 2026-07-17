@@ -1,5 +1,5 @@
-/* ===================================================
-   GridSpeak — transition.js
+﻿/* ===================================================
+   ChunkSpeak — transition.js
    Smooth page transition with rotating logo
    =================================================== */
 

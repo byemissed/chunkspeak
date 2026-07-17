@@ -207,8 +207,8 @@ code {
   display: flex; align-items: center; gap: 20px;
 }
 .mod-icon {
-  width: 80px; height: 80px;
-  border-radius: 12px; background: var(--bg4);
+  width: 88px; height: 88px;
+  border-radius: 16px; background: var(--bg4);
   border: 1px solid var(--border-lt);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; font-size: 2.5rem;

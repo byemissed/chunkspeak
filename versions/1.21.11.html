@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0" />
-  <title>GridSpeak &#8212; 1.21.11</title>
+  <title>ChunkSpeak &#8212; 1.21.11</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .ver-page {
@@ -103,7 +103,7 @@
     <div class="nav-inner">
       <a href="../index.html" class="logo">
         <div class="logo-block"><span></span><span></span><span></span><span></span></div>
-        GridSpeak
+        ChunkSpeak
       </a>
     </div>
   </nav>
@@ -135,7 +135,7 @@
 
       <!-- Countdown download button -->
       <div class="dl-btn-wrap">
-        <button class="dl-btn" id="dlBtn" disabled data-version="1.21.11" data-url="../Dowlands/GridSpeak-1.21.11.jar">
+        <button class="dl-btn" id="dlBtn" disabled data-version="1.21.11" data-url="../Dowlands/ChunkSpeak-1.21.11.jar">
           <div class="dl-progress" id="dlProgress" style="width:100%"></div>
           <span class="dl-btn-text" id="dlBtnText">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -177,7 +177,7 @@
         if (btn.disabled) return;
         var a = document.createElement('a');
         a.href = dlUrl;
-        a.download = 'GridSpeak-' + version + '.jar';
+        a.download = 'ChunkSpeak-' + version + '.jar';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

@@ -1,5 +1,5 @@
-/* ===================================================
-   GridSpeak — main.js
+﻿/* ===================================================
+   ChunkSpeak — main.js
    =================================================== */
 
 const VERSIONS = [
@@ -16,7 +16,7 @@ const VERSIONS = [
 
   // 1.21.9 — release
   { id:'1.21.9', gameVer:'1.21.9', fabricApi:'0.113.1+1.21.9', date:'Jun 3, 2025', dateClass:'recent', channel:'release',
-    changelog:['Voice chat range configurable per-server via GridSpeak.json','Added mute-all keybind (default: M)','Bug fix: /tpa accepting requests after sender logged off','Bug fix: warp list showing duplicate entries after reload','Bug fix: /spawn setting wrong coordinates after world border resize','Bug fix: voice chat not reconnecting after server plugin reload','Bug fix: /party chat messages leaking to global chat'] },
+    changelog:['Voice chat range configurable per-server via ChunkSpeak.json','Added mute-all keybind (default: M)','Bug fix: /tpa accepting requests after sender logged off','Bug fix: warp list showing duplicate entries after reload','Bug fix: /spawn setting wrong coordinates after world border resize','Bug fix: voice chat not reconnecting after server plugin reload','Bug fix: /party chat messages leaking to global chat'] },
 
   // 1.21.8 — release
   { id:'1.21.8', gameVer:'1.21.8', fabricApi:'0.112.0+1.21.8', date:'May 20, 2025', dateClass:'moderate', channel:'release',
@@ -199,7 +199,7 @@ function renderVersions() {
         ${vIcon(v.channel)}
         <div>
           <div class="v-name">${v.id} ${latestBadge} ${channelBadge(v.channel)}</div>
-          <div class="v-sub">GridSpeak ${v.id} · Fabric API ${v.fabricApi}</div>
+          <div class="v-sub">ChunkSpeak ${v.id} · Fabric API ${v.fabricApi}</div>
         </div>
         <span class="v-game-tag">${v.gameVer}</span>
         <span class="v-platform">Fabric</span>
