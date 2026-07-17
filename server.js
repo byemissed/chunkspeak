@@ -77,7 +77,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`\n  EssentialMC Local Server`);
+  console.log(`\n  GridSpeak Local Server`);
   console.log(`  ─────────────────────────`);
   console.log(`  http://localhost:${PORT}\n`);
 });

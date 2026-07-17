@@ -1,5 +1,5 @@
 /* ===================================================
-   EssentialMC — transition.js
+   GridSpeak — transition.js
    Smooth page transition with rotating logo
    =================================================== */
 
