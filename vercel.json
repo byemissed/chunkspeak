@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/mod", "destination": "/mod/index.html" }
+    { "source": "/mod", "destination": "/mod/index.html" },
+    { "source": "/versions/:ver", "destination": "/versions/:ver.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
   ]
 }
