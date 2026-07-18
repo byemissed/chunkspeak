@@ -1,1 +1,435 @@
-ï»¿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0" />
+  <title>ChunkSpeak — Play Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="landing.css" />
+  <link rel="stylesheet" href="chest.css" />
+</head>
+<body class="landing-body">
+
+<!-- FULLPAGE VIDEO BACKGROUND -->
+<video class="site-bg-video" autoplay muted loop playsinline disablePictureInPicture>
+  <source src="videos/hero.mp4" type="video/mp4">
+</video>
+
+<!-- LOGIN/REGISTER MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="authModal">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-modal="login" data-i18n="nav.signin">Sign In</button>
+      <button class="modal-tab" data-modal="register" data-i18n="nav.register">Register</button>
+    </div>
+    <form class="auth-form active" id="loginForm">
+      <h2 data-i18n="modal.signin.title">Welcome back</h2>
+      <p class="auth-sub" data-i18n="modal.signin.sub">Sign in to your ChunkSpeak account</p>
+      <div class="field-group">
+        <label data-i18n="modal.signin.label.user">Username or Email</label>
+        <input type="text" placeholder="your@email.com" autocomplete="username" />
+      </div>
+      <div class="field-group">
+        <label data-i18n="modal.signin.label.pass">Password</label>
+        <input type="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <button type="submit" class="auth-btn" data-i18n="modal.signin.btn">Sign In</button>
+      <p class="auth-footer"><span data-i18n="modal.signin.foot">Don't have an account?</span> <a href="#" class="switch-tab" data-target="register" data-i18n="modal.signin.foot.link">Register</a></p>
+    </form>
+    <form class="auth-form" id="registerForm">
+      <h2 data-i18n="modal.reg.title">Create account</h2>
+      <p class="auth-sub" data-i18n="modal.reg.sub">Join the ChunkSpeak community</p>
+      <div class="field-group">
+        <label data-i18n="modal.reg.label.user">Username</label>
+        <input type="text" placeholder="CraftPlayer123" autocomplete="username" />
+      </div>
+      <div class="field-group">
+        <label data-i18n="modal.reg.label.email">Email</label>
+        <input type="email" placeholder="your@email.com" autocomplete="email" />
+      </div>
+      <div class="field-group">
+        <label data-i18n="modal.reg.label.pass">Password</label>
+        <input type="password" placeholder="At least 8 characters" autocomplete="new-password" />
+      </div>
+      <button type="submit" class="auth-btn" data-i18n="modal.reg.btn">Create Account</button>
+      <p class="auth-footer"><span data-i18n="modal.reg.foot">Already have an account?</span> <a href="#" class="switch-tab" data-target="login" data-i18n="modal.reg.foot.link">Sign In</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <div class="logo-block"><span></span><span></span><span></span><span></span></div>
+      ChunkSpeak
+    </a>
+    <div class="nav-right">
+      <button class="btn-ghost-nav" id="openLogin" data-i18n="nav.signin">Sign In</button>
+      <button class="btn-nav-green" id="openRegister" data-i18n="nav.register">Register</button>
+      <!-- Lang picker -->
+      <div class="dd-wrap" id="langPicker">
+        <button class="filter-btn" id="langPickerBtn">
+          ???? <span>EN</span>
+          <svg class="dd-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dd-panel" id="langPickerDd"></div>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="btn-ghost-nav mobile-full" id="openLoginMobile">Sign In</button>
+    <button class="btn-nav-green mobile-full" id="openRegisterMobile">Register</button>
+    <a href="mod/" class="mobile-link mobile-cta" style="margin-top:8px;">Get Started ?</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="lp-hero lp-hero-video">
+  <div class="lp-hero-inner">
+    <div class="lp-badge">
+      <span class="lp-badge-dot"></span>
+      <span data-i18n="hero.badge">v1.21.11 — Latest Release</span>
+    </div>
+    <h1>
+      <span data-i18n="hero.h1a">Play Minecraft</span><br />
+      <span class="lp-accent" data-i18n="hero.h1b">Together.</span>
+    </h1>
+    <p data-i18n="hero.desc">ChunkSpeak is a Fabric mod that gives your server everything it needs — teleportation, voice chat, party system, and custom avatars. Drop in one <code>.jar</code>, restart, done.</p>
+    <div class="lp-hero-btns">
+      <a href="mod/" class="lp-btn-primary">
+        <span data-i18n="hero.btn.start">Get Started</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#install" class="lp-btn-ghost" data-i18n="hero.btn.install">How to Install</a>
+    </div>
+    <div class="lp-hero-tags">
+      <span>Fabric</span>
+      <span>MC 1.21.1 – 1.21.11</span>
+      <span data-i18n="hero.tag.noconfig">No config</span>
+      <span>Client &amp; Server</span>
+    </div>
+  </div>
+
+  <!-- Hero Art: Bee Image -->
+  <div class="lp-hero-art">
+    <div class="lp-star-scene">
+      <div class="lp-bee-scene" id="lpBeeScene">
+        <img src="images/bee.png" alt="Minecraft Bee" class="bee-img-art" id="beeImgArt" />
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- STATS + INSTALL wrapper — yapraklar burada akacak -->
+<div class="petal-zone" id="petalZone">
+<canvas id="petalCanvas"></canvas>
+
+<!-- STATS STRIP -->
+<div class="lp-stats" id="lpStats">
+  <div class="lp-stat">
+    <span class="lp-stat-n" data-count="170" data-suffix="K">0</span>
+    <span class="lp-stat-l" data-i18n="stats.downloads">Downloads</span>
+  </div>
+  <div class="lp-stat-div"></div>
+  <div class="lp-stat">
+    <span class="lp-stat-n" data-count="26">0</span>
+    <span class="lp-stat-l" data-i18n="stats.versions">Versions</span>
+  </div>
+  <div class="lp-stat-div"></div>
+  <div class="lp-stat">
+    <span class="lp-stat-n">1.21.11</span>
+    <span class="lp-stat-l" data-i18n="stats.latest">Latest MC</span>
+  </div>
+  <div class="lp-stat-div"></div>
+  <div class="lp-stat">
+    <span class="lp-stat-n">Free</span>
+    <span class="lp-stat-l" data-i18n="stats.always">Always</span>
+  </div>
+</div>
+
+<!-- INSTALL STEPS -->
+<section class="lp-section lp-section-dark" id="install">
+  <div class="lp-fade-top"></div>
+  <div class="lp-section-inner">
+    <div class="lp-section-header">
+      <span class="lp-label" data-i18n="install.label">Installation</span>
+      <h2 data-i18n="install.title">Up and running in 3 steps</h2>
+      <p data-i18n="install.sub">No config files. No setup wizard. Just drop and play.</p>
+    </div>
+    <div class="lp-steps">
+      <div class="lp-step">
+        <div class="lp-step-num">01</div>
+        <h4 data-i18n="install.s1.title">Download the .jar</h4>
+        <p data-i18n="install.s1.desc">Pick your Minecraft version on the mod page and grab the latest release.</p>
+      </div>
+      <div class="lp-step-arrow">?</div>
+      <div class="lp-step">
+        <div class="lp-step-num">02</div>
+        <h4 data-i18n="install.s2.title">Drop into /mods</h4>
+        <p data-i18n="install.s2.desc">Place the file in your Fabric server's /mods folder.</p>
+      </div>
+      <div class="lp-step-arrow">?</div>
+      <div class="lp-step">
+        <div class="lp-step-num">03</div>
+        <h4 data-i18n="install.s3.title">Restart &amp; Play</h4>
+        <p data-i18n="install.s3.desc">Restart the server. ChunkSpeak loads automatically — all commands are live immediately.</p>
+      </div>
+    </div>
+  </div>
+  <div class="lp-fade-bottom"></div>
+</section>
+</div><!-- /petal-zone -->
+
+<!-- CTA -->
+<section class="lp-cta">
+  <div class="lp-cta-fade-top"></div>
+  <div class="lp-cta-inner">
+    <div class="lp-cta-tag" data-i18n="cta.tag">v1.21.11 — Latest Release</div>
+    <h2 data-i18n="cta.title">Ready to play?</h2>
+    <p data-i18n="cta.desc">Lightweight, free, and works on any Fabric server.</p>
+    <a href="mod/" class="lp-btn-primary large">
+      <span data-i18n="cta.btn">Get Started</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <div class="lp-cta-versions">
+      <span>MC 1.21.1</span><span class="lp-cta-dot"></span>
+      <span>MC 1.21.2</span><span class="lp-cta-dot"></span>
+      <span>MC 1.21.3</span><span class="lp-cta-dot"></span>
+      <span>MC 1.21.11</span>
+    </div>
+  </div>
+  <div class="lp-cta-fade-bottom"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="logo">
+      <div class="logo-block"><span></span><span></span><span></span><span></span></div>
+      ChunkSpeak
+    </a>
+  </div>
+  <div class="footer-legal">
+    <span>© 2025 ChunkSpeak. All rights reserved.</span>
+    <div class="footer-legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+/* -- Modal -- */
+(function() {
+  const overlay    = document.getElementById('modalOverlay');
+  const closeBtn   = document.getElementById('modalClose');
+  const modalTabs  = document.querySelectorAll('.modal-tab');
+  const authForms  = document.querySelectorAll('.auth-form');
+  const switchLinks= document.querySelectorAll('.switch-tab');
+
+  function openModal(tab) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    activateTab(tab || 'login');
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function activateTab(name) {
+    modalTabs.forEach(t => t.classList.toggle('active', t.dataset.modal === name));
+    authForms.forEach(f => f.classList.toggle('active', f.id === name + 'Form'));
+  }
+
+  document.getElementById('openLogin')?.addEventListener('click',         () => openModal('login'));
+  document.getElementById('openRegister')?.addEventListener('click',      () => openModal('register'));
+  document.getElementById('openLoginMobile')?.addEventListener('click',   () => openModal('login'));
+  document.getElementById('openRegisterMobile')?.addEventListener('click',() => openModal('register'));
+  closeBtn?.addEventListener('click', closeModal);
+  overlay?.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  modalTabs.forEach(t => t.addEventListener('click', () => activateTab(t.dataset.modal)));
+  switchLinks.forEach(l => l.addEventListener('click', e => { e.preventDefault(); activateTab(l.dataset.target); }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  authForms.forEach(f => f.addEventListener('submit', e => { e.preventDefault(); closeModal(); }));
+})();
+/* -- Sag tiklamayi ve DevTools'u engelle -- */
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  // F12
+  if (e.key === 'F12') { e.preventDefault(); return false; }
+  // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+  if (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].includes(e.key)) { e.preventDefault(); return false; }
+  // Ctrl+U (kaynak görüntüle)
+  if (e.ctrlKey && ['U','u'].includes(e.key)) { e.preventDefault(); return false; }
+  // Ctrl+S (kaydet)
+  if (e.ctrlKey && ['S','s'].includes(e.key)) { e.preventDefault(); return false; }
+});
+
+/* -- Navbar scroll -- */
+const nb = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nb.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* -- Smooth scroll — anchor linkler -- */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+/* -- Hamburger -- */
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(a =>
+  a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'))
+);
+
+/* -- Scroll reveal -- */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('lp-revealed'); revObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.lp-step, .lp-section-header, .lp-cta-inner').forEach(el => revObs.observe(el));
+
+/* -- Stats counter animation -- */
+const statsEl = document.getElementById('lpStats');
+const countEls = statsEl.querySelectorAll('[data-count]');
+let counted = false;
+
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) {
+    counted = true;
+    statsEl.classList.add('lp-revealed');
+    countEls.forEach(el => {
+      const target = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(ease * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+}, { threshold: 0.5 });
+statsObs.observe(statsEl);
+/* -- Bee Image mouse interaction -- */
+const beeImg = document.getElementById('beeImgArt');
+if (beeImg) {
+  const scene = beeImg.closest('.lp-star-scene');
+  scene.addEventListener('mousemove', e => {
+    const r = scene.getBoundingClientRect();
+    const dx = ((e.clientX - r.left) / r.width  - 0.5) * 30;
+    const dy = ((e.clientY - r.top)  / r.height - 0.5) * 20;
+    beeImg.style.transform = `perspective(1000px) rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.05)`;
+    beeImg.style.animationPlayState = 'paused';
+  });
+  scene.addEventListener('mouseleave', () => {
+    beeImg.style.transform = '';
+    beeImg.style.animationPlayState = 'running';
+  });
+}
+</script>
+<script src="chest.js"></script>
+<script>
+/* -- Petal Canvas — sadece gri bölgede -- */
+(function() {
+  const canvas = document.getElementById('petalCanvas');
+  const zone   = document.getElementById('petalZone');
+  const ctx    = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = zone.offsetWidth;
+    canvas.height = zone.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const COLORS = [
+    'rgba(255,182,193,',
+    'rgba(255,105,147,',
+    'rgba(255,218,224,',
+    'rgba(220,150,180,',
+    'rgba(255,200,210,',
+  ];
+
+  class Petal {
+    constructor() { this.reset(true); }
+
+    reset(initial) {
+      this.x        = Math.random() * canvas.width;
+      this.y        = initial ? Math.random() * canvas.height : -20;
+      this.size     = 3 + Math.random() * 6;
+      this.speedY   = 0.25 + Math.random() * 0.4;   // çok yavas
+      this.speedX   = -0.2 + Math.random() * 0.4;
+      this.rot      = Math.random() * Math.PI * 2;
+      this.rotSpeed = (Math.random() - 0.5) * 0.02;
+      this.sway     = Math.random() * Math.PI * 2;
+      this.swaySpeed= 0.008 + Math.random() * 0.01;
+      this.swayAmp  = 0.3 + Math.random() * 0.5;
+      this.color    = COLORS[Math.floor(Math.random() * COLORS.length)];
+      this.alpha    = 0.3 + Math.random() * 0.4;
+    }
+
+    update() {
+      this.sway += this.swaySpeed;
+      this.x    += this.speedX + Math.sin(this.sway) * this.swayAmp;
+      this.y    += this.speedY;
+      this.rot  += this.rotSpeed;
+
+      // Alta yaklasinca yavasça kaybol
+      const fadeStart = canvas.height * 0.75;
+      if (this.y > fadeStart) {
+        this.alpha -= 0.003;
+      }
+
+      if (this.alpha <= 0 || this.y > canvas.height + 20) this.reset(false);
+    }
+
+    draw() {
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rot);
+      ctx.beginPath();
+      ctx.ellipse(0, 0, this.size * 0.45, this.size, 0, 0, Math.PI * 2);
+      ctx.fillStyle = this.color + this.alpha + ')';
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  // Sadece 20 yaprak
+  const petals = Array.from({ length: 20 }, () => new Petal());
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    petals.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
